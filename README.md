@@ -1,3 +1,3 @@
-# Headline
+# IGAP
 
-Description of project.
+Independent Group of Analytical Psychologists
