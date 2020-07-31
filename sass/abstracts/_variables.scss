@@ -1,0 +1,169 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+// WIDTH
+$max-width: 145rem;
+
+
+// GRID VARIABLES
+$grid-gap: 2vw;
+$grid-column-gap: 2vw;
+$grid-row-gap: 2vh;
+
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px (1200 : 16 = 75)
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px
+$bp-small: 37.5em; // 600px
+
+
+// FONTS
+
+$font-primary: 'Arvo', serif;
+$font-secondary: 'Oswald', sans-serif;
+$font-size-xxx-large: 5rem;
+$font-size-xx-large: 3.2rem;
+$font-size-x-large: 2.8rem;
+$font-size-large: 2.2rem;
+$font-size-medium: 2rem;
+$font-size: 1.6rem;
+$font-size-small: 1.4rem;
+$font-size-x-small: 1.2rem;
+$font-size-xx-small: 1.1rem;
+$font-weight: 400;
+$font-weight-bold: 700;
+
+$lineheight-text: 1.6;
+$lineheight-heading: 1.2;
+
+
+// COLOR VARIABLES
+$color-white: #FFFFFF;
+$color-grey: #EAECEF;
+$color-dark: #3E4147;
+$color-primary-red: #E23B30;
+
+
+// SHADOWS
+$shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+$shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+
+
+// SPACING
+$spacing-xx-small: 0.4rem;
+$spacing-x-small: 0.8rem;
+$spacing-small: 1.2rem;
+$spacing: 1.6rem;
+$spacing-medium: 2.4rem;
+$spacing-large: 3.2rem;
+$spacing-x-large: 6.4rem;
+$spacing-xx-large: 12.8rem;
+
+
+
+
+
+
+// SCHNEDTMAN VARIABLES
+$p-color-text: hsla(0, 0, 5, 1); 
+$p-color-light: hsla(0, 0, 90, 1);
+
+$p-color-grey-light-1: #f9f7f6;
+
+
+$p-color-blue: hsla(208, 96, 22, 1); 
+$p-color-blue-light: hsla(207, 95, 38, 1); 
+$p-color-blue-light-2: hsla(213, 72, 81, 1); 
+
+$p-color-accent: hsla(39, 95, 38, 1); 
+$p-color-accent-light: hsla(10, 44, 55, 1); 
+
+$color-primary: #c69963;
+$color-primary-dark: #B28451;
+$color-secondary: #101d2c;
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+
+// RESPONSIVE BREAKPOINTS
+
+$bp-largest: 75em; // 1200px (1200 : 16 = 75)
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px
+$bp-small: 37.5em; // 600px
+
+
+
+
+/// DEFAULT
+/* 
+/// Regular font family
+/// @type List
+$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+
+
+
+
+/// Copy text color
+/// @type Color
+$text-color: rgb(34, 34, 34) !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: rgb(229, 0, 80) !default;
+
+/// Light grey
+/// @type Color
+$light-grey: rgb(237, 237, 237) !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: rgb(153, 153, 153) !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: rgb(68, 68, 68) !default;
+
+
+
+
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+
+
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+
+
+
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;
+ */

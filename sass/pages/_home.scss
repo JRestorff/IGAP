@@ -1,0 +1,74 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+
+// Main Section 
+main {
+    grid-row: 5;
+}
+
+h1,
+h1 + p,
+main {
+    grid-column: 4 / 8; 
+}
+
+h1 {
+    grid-row: 2; 
+}
+
+h1 + p  {
+    grid-row: 3;
+    font-size: $font-size-medium; 
+    font-weight: $font-weight-bold;
+}
+
+main p:first-of-type::first-line {
+    font-weight: $font-weight-bold; 
+}
+
+p:not(h1 + p) + p {
+    text-indent: 2rem; 
+}
+
+
+
+// Section Images Red Book
+.images-red-book {
+    grid-column: 2 / -1; 
+    grid-row: 4;     
+    margin-top: $spacing-medium;
+    margin-bottom: $spacing-medium;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr auto;    
+}
+
+.irb1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.irb2 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.irb3 {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.irb4 {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.irb {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: $spacing-small;
+    
+}
