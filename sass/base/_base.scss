@@ -65,8 +65,15 @@ img {
  */
 
 a:link,
-a:visited,
+a:visited {
+    color: $color-primary-red; 
+    text-decoration: none;
+    font-weight: 700;
+}
+
 a:hover,
 a:active {
-    text-decoration: none;    
+    color: $color-primary-red;
+    text-decoration: underline;
+    font-weight: 700;
 }

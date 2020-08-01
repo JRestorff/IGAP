@@ -3,18 +3,23 @@
 // -----------------------------------------------------------------------------
 
 .btn {    
-    background-color: $p-color-accent;
-    color: $p-color-light;    
-    border: none;
+    color: $color-dark;
+    background-color: $color-white; 
+    border: 1px solid $color-dark;
     border-radius: 0;
     font-family: $font-secondary;
     font-size: 1.8rem;
+    font-weight: $font-weight-bold;
+    text-align: center;
     text-transform: uppercase;
     padding: 1.5rem 2.5rem;
     cursor: pointer;
     transition: all .2s;    
 
     &:hover {
-        background-color: $p-color-accent-light;
+        background-color: $color-primary-red;
+        color: $color-white;
+        border: 1px solid $color-primary-red;
     }
 }
+

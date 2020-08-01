@@ -7,10 +7,38 @@ header {
 }
 
 
-// IGAP-logo
+/* // IGAP-logo
 .logo {
     grid-column: 1;
     grid-row: 1;
+} */
+
+.banner {
+    grid-column: 1 / -1;
+    grid-row: 1;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+
+    &__contact {
+        font-family: $font-secondary;
+        font-size: $font-size-x-large;
+        text-align: right;
+        color: $color-dark;
+
+        a:link,
+        a:visited {
+            color: $color-dark;
+        }
+
+        a:hover,
+        a:active {
+            color: $color-primary-red;
+            text-decoration: none;
+        }
+    }
 }
 
 
