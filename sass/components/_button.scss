@@ -2,24 +2,27 @@
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
 
-.btn {    
+a.btn--learn-more {    
     color: $color-dark;
+    cursor: pointer;
     background-color: $color-white; 
-    border: 1px solid $color-dark;
+    border: 2px solid $color-dark;
     border-radius: 0;
+    display: block;
     font-family: $font-secondary;
     font-size: 1.8rem;
     font-weight: $font-weight-bold;
+    padding: 1rem 2rem;
     text-align: center;
+    text-decoration: none;     
     text-transform: uppercase;
-    padding: 1.5rem 2.5rem;
-    cursor: pointer;
-    transition: all .2s;    
+    transition: all .2s;
+    width: 18rem;
 
     &:hover {
         background-color: $color-primary-red;
         color: $color-white;
         border: 1px solid $color-primary-red;
-    }
+    }    
 }
 

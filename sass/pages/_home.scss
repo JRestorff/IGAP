@@ -90,8 +90,8 @@ p:not(h1 + p) + p {
 }
 
 
-// Breaking News
-.breaking-news {
+// Finding an Analyst
+.finding-analyst {
     grid-column: 7 / -1; 
     grid-row: 6;     
     margin-top: $spacing-medium;
@@ -101,4 +101,12 @@ p:not(h1 + p) + p {
 .line-after-6 {
     grid-column: 3 / -1; 
     grid-row: 7;       
+}
+
+// Breaking News
+.breaking-news {
+    grid-column: 1 / 2; 
+    grid-row: 8;     
+    margin-top: $spacing-medium;
+    margin-bottom: $spacing-medium;
 }

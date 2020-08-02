@@ -566,11 +566,6 @@ hr {
 header {
   display: contents; }
 
-/* // IGAP-logo
-.logo {
-    grid-column: 1;
-    grid-row: 1;
-} */
 .banner {
   grid-column: 1 / -1;
   grid-row: 1;
@@ -597,20 +592,23 @@ header {
   .main-menu ul {
     list-style: none; }
 
-.btn {
+a.btn--learn-more {
   color: #3E4147;
+  cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #3E4147;
+  border: 2px solid #3E4147;
   border-radius: 0;
+  display: block;
   font-family: "Roboto", sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
+  padding: 1rem 2rem;
   text-align: center;
+  text-decoration: none;
   text-transform: uppercase;
-  padding: 1.5rem 2.5rem;
-  cursor: pointer;
-  transition: all .2s; }
-  .btn:hover {
+  transition: all .2s;
+  width: 18rem; }
+  a.btn--learn-more:hover {
     background-color: #E23B30;
     color: #FFFFFF;
     border: 1px solid #E23B30; }
@@ -679,7 +677,7 @@ p + p {
   margin-top: 2.4rem;
   margin-bottom: 2.4rem; }
 
-.breaking-news {
+.finding-analyst {
   grid-column: 7 / -1;
   grid-row: 6;
   margin-top: 2.4rem;
@@ -688,3 +686,9 @@ p + p {
 .line-after-6 {
   grid-column: 3 / -1;
   grid-row: 7; }
+
+.breaking-news {
+  grid-column: 1 / 2;
+  grid-row: 8;
+  margin-top: 2.4rem;
+  margin-bottom: 2.4rem; }
