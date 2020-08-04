@@ -6,17 +6,16 @@ header {
     display: contents;
 }
 
+.banner {        
 
-.banner {
-    grid-column: 1 / -1;
-    grid-row: 1;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
-    align-items: center;
+    &__logo {        
+        grid-column: 1;
+        grid-row: 1;            
+    }
 
     &__contact {
+        grid-column: 9;   
+        grid-row: 1;     
         font-family: $font-secondary;
         font-size: $font-size-x-large;
         text-align: right;
@@ -36,13 +35,96 @@ header {
 }
 
 
-// Main Menu
-.main-menu {
-    grid-column: 1 / 2;
-    grid-row: 2;
+hr.nav-line {    
+    position: absolute;
+    top: 0;
+    right: -2px;
+    height: 30px;
+    width: 5px;
+    background: $color-primary-red;
+    padding: 0;
+    border: none;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    display: block;    
+}
 
-    ul {
-        list-style: none;
-    }
+.menu-container {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+    padding: 2rem 0;
+    border-right: 3px solid $color-grey;    
+}
+
+.menu-container ul {
+    position: relative;
+}
+
+.menu__item {
+    line-height: 1.2;
+}
+
+nav {
+    position: relative;
+}
+
+.nav .menu {
+    display: block;
+}
+
+.nav .show-menu {
+    display: none;
+    margin-bottom: 10px;
+    padding: $spacing-small 0;    
+}
+
+.nav input[type="checkbox"] {
+    -webkit-appearance: none;
+    display: none;
+}
+
+.nav input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    margin: 3px 0.5ex;
+    padding: initial;
+    border: initial;
+}
+
+[role="navigation"] ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    column-count: 1;
+}
+
+[role="navigation"] li {
+    margin-bottom: 1.8rem;
+    text-align: right;
+}
+
+[role="navigation"] .active {
+    display: block;
+    border: none !important;
+    position: relative;
+    transform: translateX(2px);
+    color: $color-primary-red;
+}
+
+[role="navigation"] a {
+    margin: 0 .75rem 0 0;
+    padding: .75rem 1.476rem .75rem .75rem;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;    
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-dark;
+    transition: color 0.3s ease-in-out;
+    box-decoration-break: clone;
+}
+
+[role="navigation"] a:hover {
+    color: $color-primary-red;
 }
 
