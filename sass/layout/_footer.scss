@@ -1,3 +1,43 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+
+.footer {
+    grid-column: 1 / -1;
+    grid-row: 12; 
+    margin-top: $spacing-x-large;   
+    
+    display: grid;    
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: $grid-gap;    
+
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(226, 124, 48, 0.8)), url("../img/background-image-jung-letter.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;    
+    padding: 6rem 4rem;
+
+    &--item {
+        background-color: $color-white;
+        opacity: 0.7;
+        padding: 1rem;
+        font-weight: $font-weight-bold;
+        
+        p {
+            text-indent: 0rem; 
+        }
+    }
+    
+    &---left {
+        grid-column: 1;    
+    }
+    
+    &---center {
+        grid-column: 2;    
+    }
+    
+    &---right {
+        grid-column: 3;
+    }
+
+}
+
