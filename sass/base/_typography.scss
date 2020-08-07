@@ -70,3 +70,21 @@ hr {
   border: 0;  
   border-bottom: $border-width-thick solid $color-grey;
 }
+
+
+// Quote
+.quote {
+
+  &--font-styling {
+    color: $color-dark;
+    font-family: $font-secondary;
+    font-style: italic;    
+    font-size: $font-size-medium;  
+    font-weight: $font-weight;
+    line-height: $lineheight-text;
+  }  
+
+  &--color-icon {
+      color: $color-grey-x;
+  }
+}
