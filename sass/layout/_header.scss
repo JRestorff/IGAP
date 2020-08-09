@@ -2,129 +2,125 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 
-header {
-    display: contents;
+.nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: $spacing-large;
 }
 
-.banner {        
-
-    &__logo {        
-        grid-column: 1;
-        grid-row: 1;            
-    }
-
-    &__contact {
-        grid-column: 8;   
-        grid-row: 1;     
-        font-family: $font-secondary;
-        font-size: $font-size-x-large;
-        text-align: right;
-        color: $color-dark;
-
-        a:link,
-        a:visited {
-            color: $color-dark;
-        }
-
-        a:hover,
-        a:active {
-            color: $color-primary-red;
-            text-decoration: none;
-        }
-    }
-}
-
-
-hr.nav-line {    
-    position: absolute;
-    top: 0;
-    right: -2px;
-    height: 30px;
-    width: 5px;
-    background: $color-primary-red;
-    padding: 0;
-    border: none;
-    -webkit-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
-    display: block;    
-}
-
-.menu-container {
-    grid-column: 1 / 2;
-    grid-row: 2 / 4;
-    padding: 2rem 0;
-    border-right: 3px solid $color-grey;    
-}
-
-.menu-container ul {
-    position: relative;
-}
-
-.menu__item {
-    line-height: 1.2;
-}
-
-nav {
-    position: relative;
-}
-
-.nav .menu {
-    display: block;
-}
-
-.nav .show-menu {
-    display: none;
-    margin-bottom: 10px;
-    padding: $spacing-small 0;    
-}
-
-.nav input[type="checkbox"] {
-    -webkit-appearance: none;
-    display: none;
-}
-
-.nav input[type="checkbox" i] {
-    background-color: initial;
-    cursor: default;
-    margin: 3px 0.5ex;
-    padding: initial;
-    border: initial;
-}
-
-[role="navigation"] ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    column-count: 1;
-}
-
-[role="navigation"] li {
-    margin-bottom: 1.8rem;
-    text-align: right;
-}
-
-[role="navigation"] .active {
-    display: block;
-    border: none !important;
-    position: relative;
-    transform: translateX(2px);
-    color: $color-primary-red;
-}
-
-[role="navigation"] a {
-    margin: 0 .75rem 0 0;
-    padding: .75rem 1.476rem .75rem .75rem;
-    font-size: 1.3rem;
-    font-weight: 900;
-    letter-spacing: 0.05em;    
-    text-transform: uppercase;
-    text-decoration: none;
+.nav-toggle {
+    font-size: $font-size-x-large;
     color: $color-dark;
-    transition: color 0.3s ease-in-out;
-    box-decoration-break: clone;
+    background: transparent;
+    border-color: transparent;
+    transition: $transition;
+    cursor: pointer;
+
+    :hover {        
+        transform: rotate(90deg);
+    }
+  }
+
+ .logo {
+      height: 5rem;      
 }
 
-[role="navigation"] a:hover {
+@media screen and (max-width: $bp-medium) {
+    .logo-desktop {
+        display: none;
+    }
+}
+
+.links {
+    list-style-type: none;
+}
+
+
+.links a {
+    color: $color-dark;
+    font-family: $font-secondary;
+    font-size: $font-size;  
+    line-height: $lineheight-text;
+    letter-spacing: 0.2rem;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: $transition;
+    text-transform: uppercase; 
+
+&:hover {    
     color: $color-primary-red;
+    text-decoration: none;    
+    }
+}
+
+  /* BY DEFAULT HIDE LINKS */
+.links {
+    height: 0;
+    overflow: hidden;
+    transition: $transition;
+  }
+  /* TOGGLE CLASS */
+  .show-links {
+    height: auto;
+    margin-bottom: $spacing-medium;
+  }
+
+
+@media screen and (min-width: $bp-medium) {
+    header,
+    nav {
+        display: contents;
+    }
+
+    .logo-desktop {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .nav-center {        
+        grid-column: 1 / -1;
+        grid-row: 1;        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;        
+    }
+
+    .nav-header {
+        padding: 0;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .links {
+        /* IMPORTANT TO ADD */
+        height: auto;
+        display: flex;
+        
+        :last-child {
+            padding-right: 0;
+        }
+
+        a {
+            padding-right: 2rem;
+            padding-left: 2rem;
+        }        
+
+        &:hover {            
+            background: transparent;
+        }
+    }   
+    
+    .line-after-nav {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
 }
 

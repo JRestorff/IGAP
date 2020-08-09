@@ -14,8 +14,8 @@
 html {    
     font-size: 62.5%; // 10px/16px = 62.5% -> 1 rem = 10px
 
-    @media only screen and (max-width: $bp-largest) {
-        font-size: 50%;
+    @media only screen and (max-width: $bp-large) {
+        font-size: 55%; // 50% before
     }
 }
 
@@ -26,11 +26,14 @@ body {
     margin: 4rem auto;
     width: 90%;    
     max-width: $max-width; 
+
+    @media screen and (min-width: $bp-medium) {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 2fr 2fr 1fr 1fr 2fr;     
+        gap: $grid-gap;    
+        align-content: start; 
+    }
     
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 2fr 2fr 1fr 1fr 2fr;     
-    gap: $grid-gap;    
-    align-content: start; 
 
     /* @media only screen and (max-width: $bp-largest) {
         margin: 0;

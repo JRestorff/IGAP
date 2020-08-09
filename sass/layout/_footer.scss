@@ -3,18 +3,16 @@
 // -----------------------------------------------------------------------------
 
 .footer {
-    grid-column: 1 / -1;
-    grid-row: 11; 
-    margin-top: $spacing-xx-large;   
-    
-    display: grid;    
-    grid-template-columns: repeat(3, 1fr); 
-    grid-gap: $grid-gap;    
-
+    margin-top: $spacing-xx-large;
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(226, 124, 48, 0.8)), url("../img/background-image-jung-letter.jpg");
     background-repeat: no-repeat;
     background-size: cover;    
     padding: 6rem 4rem;
+
+    @media screen and (max-width: $bp-medium) {
+        margin-top: $spacing-x-large;
+        margin-bottom: $spacing-x-large;
+    }  
 
     &--item {
         background-color: $color-white;
@@ -27,17 +25,60 @@
         }
     }
     
-    &---left {
-        grid-column: 1;    
+    &--left {
+        margin-bottom: $spacing-large; 
     }
     
-    &---center {
-        grid-column: 2;    
+    &--center {
+        margin-bottom: $spacing-large; 
     }
     
-    &---right {
-        grid-column: 3;
-    }
-
+    &--right {
+        margin-bottom: $spacing-large; 
+    }    
 }
+
+
+
+@media screen and (min-width: $bp-medium) {
+    .footer {
+        grid-column: 1 / -1;
+        grid-row: 11; 
+        margin-top: $spacing-xx-large;   
+        
+        display: grid;    
+        grid-template-columns: repeat(3, 1fr); 
+        gap: $grid-gap;    
+    
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(226, 124, 48, 0.8)), url("../img/background-image-jung-letter.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;    
+        padding: 6rem 4rem;
+    
+        &--item {
+            background-color: $color-white;
+            opacity: 0.7;
+            padding: 1rem;
+            font-weight: $font-weight-bold;
+            
+            p {
+                text-indent: 0rem; 
+            }
+        }
+        
+        &---left {
+            grid-column: 1;    
+        }
+        
+        &---center {
+            grid-column: 2;    
+        }
+        
+        &---right {
+            grid-column: 3;
+        }    
+    }
+}
+
+
 

@@ -377,9 +377,9 @@ template {
 
 html {
   font-size: 62.5%; }
-  @media only screen and (max-width: 75em) {
+  @media only screen and (max-width: 62.5em) {
     html {
-      font-size: 50%; } }
+      font-size: 55%; } }
 
 body {
   box-sizing: border-box;
@@ -387,10 +387,6 @@ body {
   margin: 4rem auto;
   width: 90%;
   max-width: 145rem;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 2fr 2fr 1fr 1fr 2fr;
-  gap: 2vw;
-  align-content: start;
   /* @media only screen and (max-width: $bp-largest) {
         margin: 0;
         max-width: 100%;
@@ -403,6 +399,12 @@ body {
     url(../img/background-image-jung-letter.jpg);
     background-size: cover;
     background-repeat: no-repeat; */ }
+  @media screen and (min-width: 50em) {
+    body {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 2fr 2fr 1fr 1fr 2fr;
+      gap: 2vw;
+      align-content: start; } }
 
 img {
   margin: 0;
@@ -521,8 +523,10 @@ body {
 
 .heading-1 {
   font-size: 5rem;
-  margin-top: -1rem;
   margin-bottom: 0; }
+  @media screen and (max-width: 50em) {
+    .heading-1 {
+      margin-bottom: 3.2rem; } }
 
 .heading-2 {
   font-size: 4rem;
@@ -572,118 +576,102 @@ hr {
 .quote--color-icon {
   color: #bbbcbf; }
 
-header {
-  display: contents; }
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 3.2rem; }
 
-.banner__logo {
-  grid-column: 1;
-  grid-row: 1; }
-
-.banner__contact {
-  grid-column: 8;
-  grid-row: 1;
-  font-family: "Roboto", sans-serif;
+.nav-toggle {
   font-size: 2.8rem;
-  text-align: right;
-  color: #3E4147; }
-  .banner__contact a:link,
-  .banner__contact a:visited {
-    color: #3E4147; }
-  .banner__contact a:hover,
-  .banner__contact a:active {
+  color: #3E4147;
+  background: transparent;
+  border-color: transparent;
+  transition: all 0.3s linear;
+  cursor: pointer; }
+  .nav-toggle :hover {
+    transform: rotate(90deg); }
+
+.logo {
+  height: 5rem; }
+
+@media screen and (max-width: 50em) {
+  .logo-desktop {
+    display: none; } }
+
+.links {
+  list-style-type: none; }
+
+.links a {
+  color: #3E4147;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  letter-spacing: 0.2rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s linear;
+  text-transform: uppercase; }
+  .links a:hover {
     color: #E23B30;
     text-decoration: none; }
 
-hr.nav-line {
-  position: absolute;
-  top: 0;
-  right: -2px;
-  height: 30px;
-  width: 5px;
-  background: #E23B30;
-  padding: 0;
-  border: none;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-  display: block; }
+/* BY DEFAULT HIDE LINKS */
+.links {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s linear; }
 
-.menu-container {
-  grid-column: 1 / 2;
-  grid-row: 2 / 4;
-  padding: 2rem 0;
-  border-right: 3px solid #EAECEF; }
+/* TOGGLE CLASS */
+.show-links {
+  height: auto;
+  margin-bottom: 2.4rem; }
 
-.menu-container ul {
-  position: relative; }
-
-.menu__item {
-  line-height: 1.2; }
-
-nav {
-  position: relative; }
-
-.nav .menu {
-  display: block; }
-
-.nav .show-menu {
-  display: none;
-  margin-bottom: 10px;
-  padding: 1.2rem 0; }
-
-.nav input[type="checkbox"] {
-  -webkit-appearance: none;
-  display: none; }
-
-.nav input[type="checkbox"] {
-  background-color: initial;
-  cursor: default;
-  margin: 3px 0.5ex;
-  padding: initial;
-  border: initial; }
-
-[role="navigation"] ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  column-count: 1; }
-
-[role="navigation"] li {
-  margin-bottom: 1.8rem;
-  text-align: right; }
-
-[role="navigation"] .active {
-  display: block;
-  border: none !important;
-  position: relative;
-  transform: translateX(2px);
-  color: #E23B30; }
-
-[role="navigation"] a {
-  margin: 0 .75rem 0 0;
-  padding: .75rem 1.476rem .75rem .75rem;
-  font-size: 1.3rem;
-  font-weight: 900;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #3E4147;
-  transition: color 0.3s ease-in-out;
-  box-decoration-break: clone; }
-
-[role="navigation"] a:hover {
-  color: #E23B30; }
+@media screen and (min-width: 50em) {
+  header,
+  nav {
+    display: contents; }
+  .logo-desktop {
+    grid-column: 1;
+    grid-row: 1; }
+  .logo {
+    display: none; }
+  .nav-center {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .nav-header {
+    padding: 0; }
+  .nav-toggle {
+    display: none; }
+  .links {
+    /* IMPORTANT TO ADD */
+    height: auto;
+    display: flex; }
+    .links :last-child {
+      padding-right: 0; }
+    .links a {
+      padding-right: 2rem;
+      padding-left: 2rem; }
+    .links:hover {
+      background: transparent; }
+  .line-after-nav {
+    grid-column: 1 / -1;
+    grid-row: 2; } }
 
 .footer {
-  grid-column: 1 / -1;
-  grid-row: 11;
   margin-top: 12.8rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2vw;
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(226, 124, 48, 0.8)), url("../img/background-image-jung-letter.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 6rem 4rem; }
+  @media screen and (max-width: 50em) {
+    .footer {
+      margin-top: 6.4rem;
+      margin-bottom: 6.4rem; } }
   .footer--item {
     background-color: #FFFFFF;
     opacity: 0.7;
@@ -691,12 +679,38 @@ nav {
     font-weight: 700; }
     .footer--item p {
       text-indent: 0rem; }
-  .footer---left {
-    grid-column: 1; }
-  .footer---center {
-    grid-column: 2; }
-  .footer---right {
-    grid-column: 3; }
+  .footer--left {
+    margin-bottom: 3.2rem; }
+  .footer--center {
+    margin-bottom: 3.2rem; }
+  .footer--right {
+    margin-bottom: 3.2rem; }
+
+@media screen and (min-width: 50em) {
+  .footer {
+    grid-column: 1 / -1;
+    grid-row: 11;
+    margin-top: 12.8rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(226, 124, 48, 0.8)), url("../img/background-image-jung-letter.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 6rem 4rem; }
+    .footer--item {
+      background-color: #FFFFFF;
+      opacity: 0.7;
+      padding: 1rem;
+      font-weight: 700; }
+      .footer--item p {
+        text-indent: 0rem; }
+    .footer---left {
+      grid-column: 1; }
+    .footer---center {
+      grid-column: 2; }
+    .footer---right {
+      grid-column: 3; } }
 
 a.btn--learn-more {
   color: #3E4147;
@@ -749,6 +763,10 @@ p + p {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr auto; }
+  @media screen and (max-width: 50em) {
+    .images-red-book {
+      margin-top: 3.2rem;
+      margin-bottom: 3.2rem; } }
 
 .irb1 {
   grid-column: 1;
@@ -776,18 +794,30 @@ p + p {
   grid-row: 6;
   margin-top: 2.4rem;
   margin-bottom: 2.4rem; }
+  @media screen and (max-width: 50em) {
+    .seminars {
+      margin-top: 3.2rem;
+      margin-bottom: 6.4rem; } }
 
 .analytic-training {
   grid-column: 5 / 7;
   grid-row: 6;
   margin-top: 2.4rem;
   margin-bottom: 2.4rem; }
+  @media screen and (max-width: 50em) {
+    .analytic-training {
+      margin-top: 3.2rem;
+      margin-bottom: 6.4rem; } }
 
 .finding-analyst {
   grid-column: 7 / -1;
   grid-row: 6;
   margin-top: 2.4rem;
   margin-bottom: 2.4rem; }
+  @media screen and (max-width: 50em) {
+    .finding-analyst {
+      margin-top: 3.2rem;
+      margin-bottom: 6.4rem; } }
 
 .line-after-6 {
   grid-column: 3 / -1;
@@ -795,14 +825,24 @@ p + p {
 
 .breaking-news {
   grid-column: 1 / 2;
-  grid-row: 8 / 11;
-  align-self: end; }
+  grid-row: 8 / 10;
+  /* align-self: end;  */ }
+  @media screen and (max-width: 50em) {
+    .breaking-news {
+      margin-top: 3.2rem;
+      margin-bottom: 6.4rem; } }
+  @media screen and (max-width: 62.5em) {
+    .breaking-news {
+      grid-column: 1 / 3; } }
 
 .video-jung {
   display: contents; }
   .video-jung__lede {
     grid-column: 4 / 6;
     grid-row: 8; }
+    @media screen and (max-width: 50em) {
+      .video-jung__lede {
+        margin-bottom: 3.2rem; } }
   .video-jung__file-1 {
     grid-column: 4 / 8;
     grid-row: 9;
@@ -810,6 +850,9 @@ p + p {
     width: 100%;
     height: 0;
     padding-bottom: 56.25%; }
+    @media screen and (max-width: 50em) {
+      .video-jung__file-1 {
+        margin-bottom: 3.2rem; } }
     .video-jung__file-1 iframe {
       position: absolute;
       width: 100%;
@@ -831,8 +874,17 @@ p + p {
   grid-row: 11; }
 
 .quote-unconscious {
-  grid-column: 8;
-  grid-row: 8 / 11;
+  grid-column: 1;
+  grid-row: 10 / 11;
   align-self: end; }
+  @media screen and (max-width: 50em) {
+    .quote-unconscious {
+      margin-top: 6.4rem;
+      margin-bottom: 3.2rem; } }
+  @media screen and (max-width: 62.5em) {
+    .quote-unconscious {
+      grid-column: 1 / 3;
+      grid-row: 9 / 11;
+      align-self: start; } }
   .quote-unconscious--color-icon {
     color: #bbbcbf; }
