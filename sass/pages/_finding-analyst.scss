@@ -1,0 +1,35 @@
+
+.line-after-nav {
+    grid-column: 1 / -1; 
+    grid-row: 2;    
+}
+
+
+
+.fa-headline-1 {
+    grid-column: 1 / 5;
+    grid-row: 3;    
+}
+
+.fa-lede {
+    font-size: $font-size-medium; 
+    font-weight: $font-weight-bold;
+    
+    grid-column: 1 / 5;
+    grid-row: 4; 
+}
+
+.fa-asterisk-comment {
+    grid-column: 7 / -1;
+    grid-row: 6;    
+}
+
+.fa-quote-mandala {
+    grid-column: 8;
+    grid-row: 7;    
+}
+
+.fa-main-image {
+    grid-column: 6 / -1;
+    grid-row: 3 / 6;    
+}

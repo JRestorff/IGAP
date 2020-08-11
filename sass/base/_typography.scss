@@ -91,3 +91,14 @@ hr {
       color: $color-grey-x;
   }
 }
+
+
+// Italic
+.quote {  
+    color: $color-dark;
+    font-family: $font-secondary;
+    font-style: italic;    
+    font-size: $font-size;  
+    font-weight: $font-weight;
+    line-height: $lineheight-text;
+}  

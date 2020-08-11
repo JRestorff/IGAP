@@ -83,6 +83,22 @@
         display: none;
     }
 
+    .logo-name {
+        color: $color-dark;
+        font-family: $font-secondary;    
+        font-size: $font-size;      
+        font-weight: $font-weight-bold;
+        line-height: $lineheight-text;
+    
+        grid-column: 2 / 4; 
+        grid-row: 1;
+        align-self: center;  
+    
+        /* @include respond(phone-wide) {
+            display: none;
+        }     */
+    }
+
     .nav-center {        
         grid-column: 1 / -1;
         grid-row: 1;        

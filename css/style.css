@@ -63,6 +63,23 @@ $breakpoints: (
 ///   $base-url: 'http://cdn.example.com/assets/';
 $base-url: '/assets/' !default;
  */
+/*
+0-600px:    Phone
+600-900px:  Tablet portrait
+900-1200px: Tablet landscape
+[1200-1800] is where our normal styles apply
+1800px +:   Big desktop
+
+&breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > > page layout > components
+
+1em = 16px
+*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -431,7 +448,7 @@ a:active {
  * Helper classes for margin
  */
 .mt-sm {
-  margin-top: 2rem; }
+  margin-top: 1.8rem; }
 
 .mt-md {
   margin-top: 3rem; }
@@ -576,6 +593,14 @@ hr {
 .quote--color-icon {
   color: #bbbcbf; }
 
+.quote {
+  color: #3E4147;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6; }
+
 .nav-header {
   display: flex;
   align-items: center;
@@ -637,6 +662,18 @@ hr {
     grid-row: 1; }
   .logo {
     display: none; }
+  .logo-name {
+    color: #3E4147;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.6;
+    grid-column: 2 / 4;
+    grid-row: 1;
+    align-self: center;
+    /* @include respond(phone-wide) {
+            display: none;
+        }     */ }
   .nav-center {
     grid-column: 1 / -1;
     grid-row: 1;
@@ -664,7 +701,7 @@ hr {
 
 .footer {
   margin-top: 12.8rem;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(226, 124, 48, 0.8)), url("../img/background-image-jung-letter.jpg");
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(140, 141, 143, 0.8)), url("../img/background-image-jung-letter.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 6rem 4rem; }
@@ -676,7 +713,8 @@ hr {
     background-color: #FFFFFF;
     opacity: 0.7;
     padding: 1rem;
-    font-weight: 700; }
+    font-weight: 700;
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3); }
     .footer--item p {
       text-indent: 0rem; }
   .footer--left {
@@ -693,18 +731,7 @@ hr {
     margin-top: 12.8rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2vw;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(226, 124, 48, 0.8)), url("../img/background-image-jung-letter.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 6rem 4rem; }
-    .footer--item {
-      background-color: #FFFFFF;
-      opacity: 0.7;
-      padding: 1rem;
-      font-weight: 700; }
-      .footer--item p {
-        text-indent: 0rem; }
+    gap: 2vw; }
     .footer---left {
       grid-column: 1; }
     .footer---center {
@@ -736,15 +763,15 @@ a.btn--learn-more {
 main {
   grid-row: 5; }
 
-h1,
-h1 + p,
+.heading-home-1,
+.heading-home-1 + p,
 main {
   grid-column: 4 / 8; }
 
-h1 {
+.heading-home-1 {
   grid-row: 2; }
 
-h1 + p {
+.heading-home-1 + p {
   grid-row: 3;
   font-size: 2rem;
   font-weight: 700; }
@@ -752,7 +779,7 @@ h1 + p {
 main p:first-of-type::first-line {
   font-weight: 700; }
 
-p + p {
+p:not(h1 + p) + p {
   text-indent: 2rem; }
 
 .images-red-book {
@@ -763,7 +790,7 @@ p + p {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr auto; }
-  @media screen and (max-width: 50em) {
+  @media only screen and (max-width: 50em) {
     .images-red-book {
       margin-top: 3.2rem;
       margin-bottom: 3.2rem; } }
@@ -794,7 +821,7 @@ p + p {
   grid-row: 6;
   margin-top: 2.4rem;
   margin-bottom: 2.4rem; }
-  @media screen and (max-width: 50em) {
+  @media only screen and (max-width: 50em) {
     .seminars {
       margin-top: 3.2rem;
       margin-bottom: 6.4rem; } }
@@ -804,7 +831,7 @@ p + p {
   grid-row: 6;
   margin-top: 2.4rem;
   margin-bottom: 2.4rem; }
-  @media screen and (max-width: 50em) {
+  @media only screen and (max-width: 50em) {
     .analytic-training {
       margin-top: 3.2rem;
       margin-bottom: 6.4rem; } }
@@ -814,7 +841,7 @@ p + p {
   grid-row: 6;
   margin-top: 2.4rem;
   margin-bottom: 2.4rem; }
-  @media screen and (max-width: 50em) {
+  @media only screen and (max-width: 50em) {
     .finding-analyst {
       margin-top: 3.2rem;
       margin-bottom: 6.4rem; } }
@@ -827,11 +854,11 @@ p + p {
   grid-column: 1 / 2;
   grid-row: 8 / 10;
   /* align-self: end;  */ }
-  @media screen and (max-width: 50em) {
+  @media only screen and (max-width: 50em) {
     .breaking-news {
       margin-top: 3.2rem;
       margin-bottom: 6.4rem; } }
-  @media screen and (max-width: 62.5em) {
+  @media only screen and (max-width: 62.5em) {
     .breaking-news {
       grid-column: 1 / 3; } }
 
@@ -840,7 +867,7 @@ p + p {
   .video-jung__lede {
     grid-column: 4 / 6;
     grid-row: 8; }
-    @media screen and (max-width: 50em) {
+    @media only screen and (max-width: 50em) {
       .video-jung__lede {
         margin-bottom: 3.2rem; } }
   .video-jung__file-1 {
@@ -850,7 +877,7 @@ p + p {
     width: 100%;
     height: 0;
     padding-bottom: 56.25%; }
-    @media screen and (max-width: 50em) {
+    @media only screen and (max-width: 50em) {
       .video-jung__file-1 {
         margin-bottom: 3.2rem; } }
     .video-jung__file-1 iframe {
@@ -877,14 +904,40 @@ p + p {
   grid-column: 1;
   grid-row: 10 / 11;
   align-self: end; }
-  @media screen and (max-width: 50em) {
+  @media only screen and (max-width: 50em) {
     .quote-unconscious {
       margin-top: 6.4rem;
       margin-bottom: 3.2rem; } }
-  @media screen and (max-width: 62.5em) {
+  @media only screen and (max-width: 62.5em) {
     .quote-unconscious {
       grid-column: 1 / 3;
       grid-row: 9 / 11;
       align-self: start; } }
   .quote-unconscious--color-icon {
     color: #bbbcbf; }
+
+.line-after-nav {
+  grid-column: 1 / -1;
+  grid-row: 2; }
+
+.fa-headline-1 {
+  grid-column: 1 / 5;
+  grid-row: 3; }
+
+.fa-lede {
+  font-size: 2rem;
+  font-weight: 700;
+  grid-column: 1 / 5;
+  grid-row: 4; }
+
+.fa-asterisk-comment {
+  grid-column: 7 / -1;
+  grid-row: 6; }
+
+.fa-quote-mandala {
+  grid-column: 8;
+  grid-row: 7; }
+
+.fa-main-image {
+  grid-column: 6 / -1;
+  grid-row: 3 / 6; }
