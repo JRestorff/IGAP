@@ -702,7 +702,7 @@ hr {
     grid-row: 2; } }
 
 .footer {
-  margin-top: 12.8rem;
+  margin-top: 6.4rem;
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(140, 141, 143, 0.8)), url("../img/background-image-jung-letter.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -939,6 +939,9 @@ p:not(h1 + p) + p {
 .find-ana--asterisk-comment {
   grid-column: 7 / -1;
   grid-row: 6; }
+  @media only screen and (max-width: 50em) {
+    .find-ana--asterisk-comment {
+      margin-bottom: 6.4rem; } }
 
 .find-ana--quote-mandala {
   grid-column: 8;
@@ -947,6 +950,9 @@ p:not(h1 + p) + p {
 .find-ana__main-image {
   grid-column: 6 / -1;
   grid-row: 3 / 6; }
+  @media only screen and (max-width: 50em) {
+    .find-ana__main-image--figcaption {
+      margin-bottom: 6.4rem; } }
 
 .find-ana__menu--title {
   text-align: center; }

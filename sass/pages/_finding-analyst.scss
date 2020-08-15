@@ -18,15 +18,18 @@
 
     &--lede {
         font-size: $font-size-medium; 
-        font-weight: $font-weight-bold;
-        
+        font-weight: $font-weight-bold;        
         grid-column: 1 / 5;
         grid-row: 4; 
     }
     
     &--asterisk-comment {
         grid-column: 7 / -1;
-        grid-row: 6;    
+        grid-row: 6;
+        
+        @include respond(phone-wide) {
+            margin-bottom: $spacing-x-large;            
+        }
     }
     
     &--quote-mandala {
@@ -36,7 +39,13 @@
     
     &__main-image {
         grid-column: 6 / -1;
-        grid-row: 3 / 6;    
+        grid-row: 3 / 6;
+        
+        @include respond(phone-wide) {
+            &--figcaption {
+                margin-bottom: $spacing-x-large;
+            }
+        }
     }
 
     &__menu--title {
