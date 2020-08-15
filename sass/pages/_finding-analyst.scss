@@ -5,31 +5,106 @@
 }
 
 
-
-.fa-headline-1 {
-    grid-column: 1 / 5;
-    grid-row: 3;    
-}
-
-.fa-lede {
-    font-size: $font-size-medium; 
-    font-weight: $font-weight-bold;
+.find-ana {
+    &__menu {
+        grid-column: 1 / 5;
+        grid-row: 5 / 11;
+    }
     
-    grid-column: 1 / 5;
-    grid-row: 4; 
+    &--headline-1 {
+        grid-column: 1 / 5;
+        grid-row: 3;    
+    }
+
+    &--lede {
+        font-size: $font-size-medium; 
+        font-weight: $font-weight-bold;
+        
+        grid-column: 1 / 5;
+        grid-row: 4; 
+    }
+    
+    &--asterisk-comment {
+        grid-column: 7 / -1;
+        grid-row: 6;    
+    }
+    
+    &--quote-mandala {
+        grid-column: 8;
+        grid-row: 10;    
+    }
+    
+    &__main-image {
+        grid-column: 6 / -1;
+        grid-row: 3 / 6;    
+    }
+
+    &__menu--title {
+        text-align: center;
+    }    
+
+    &__btn-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }    
 }
 
-.fa-asterisk-comment {
-    grid-column: 7 / -1;
-    grid-row: 6;    
+@include respond(phone-wide-min-width) {
+    .find-ana__section-center {        
+        display: grid;
+        gap: $grid-gap;
+        grid-template-columns: 1fr 1fr;        
+    }
 }
 
-.fa-quote-mandala {
-    grid-column: 8;
-    grid-row: 7;    
+.filter-btn {    
+    color: $color-dark;
+    cursor: pointer;
+    background-color: $color-white; 
+    border: 2px solid $color-dark;
+    border-radius: 0;
+    display: block;
+    font-family: $font-secondary;
+    font-size: 1.5rem;
+    font-weight: $font-weight-bold;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;     
+    text-transform: uppercase;
+    transition: all .2s;
+    /* width: 18rem; */
+    margin: 1.5rem;    
+
+    &:hover {
+        background-color: $color-primary-red;
+        color: $color-white;
+        border: 1px solid $color-primary-red;
+    }    
 }
 
-.fa-main-image {
-    grid-column: 6 / -1;
-    grid-row: 3 / 6;    
+.menu-item {
+    display: grid;
+    gap: $grid-gap;
+    max-width: 25rem;
+
+    @include respond(phone-wide) {
+        margin-top: $spacing-large;
+        margin-bottom: $spacing-x-large;
+    }
+  }
+
+.item-info {
+    h4 {
+        font-size: $font-size-medium;
+        margin-bottom: $spacing;
+        border-bottom: $border-width-thick solid $color-grey;
+    } 
 }
+
+.item-text {
+    p {
+        text-indent: 0;
+    }
+}
+
