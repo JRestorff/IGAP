@@ -549,9 +549,9 @@ body {
   font-size: 4rem;
   margin-bottom: 2.4rem; }
   .heading-2--light {
-    color: #f9f7f6; }
+    color: #EAECEF; }
   .heading-2--darkt {
-    color: #54483A; }
+    color: #8c8d8f; }
 
 .heading-3 {
   font-size: 3rem;
@@ -560,9 +560,9 @@ body {
 .heading-4 {
   font-size: 1.9rem; }
   .heading-4--light {
-    color: #f9f7f6; }
+    color: #EAECEF; }
   .heading-4--darkt {
-    color: #54483A; }
+    color: #8c8d8f; }
 
 /* Span */
 .igap-red {
@@ -626,8 +626,7 @@ hr {
   height: 5rem; }
 
 @media screen and (max-width: 50em) {
-  .logo-desktop,
-  .logo-name {
+  .logo-desktop {
     display: none; } }
 
 .links {
@@ -667,15 +666,6 @@ hr {
     grid-row: 1; }
   .logo {
     display: none; }
-  .logo-name {
-    color: #3E4147;
-    font-family: "Roboto", sans-serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    line-height: 1.6;
-    grid-column: 2 / 4;
-    grid-row: 1;
-    align-self: center; }
   .nav-center {
     grid-column: 2 / -1;
     grid-row: 1;
@@ -700,6 +690,21 @@ hr {
   .line-after-nav {
     grid-column: 1 / -1;
     grid-row: 2; } }
+
+@media screen and (max-width: 1300px) {
+  .logo-name {
+    display: none; } }
+
+@media screen and (min-width: 1300px) {
+  .logo-name {
+    color: #3E4147;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.6;
+    grid-column: 2 / 4;
+    grid-row: 1;
+    align-self: center; } }
 
 .footer {
   margin-top: 6.4rem;

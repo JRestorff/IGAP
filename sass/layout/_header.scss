@@ -28,8 +28,7 @@
 }
 
 @media screen and (max-width: $bp-medium) {
-    .logo-desktop,
-    .logo-name {
+    .logo-desktop {
         display: none;
     }
 }
@@ -82,18 +81,7 @@
 
     .logo {
         display: none;
-    }
-
-    .logo-name {
-        color: $color-dark;
-        font-family: $font-secondary;    
-        font-size: $font-size;      
-        font-weight: $font-weight-bold;
-        line-height: $lineheight-text;    
-        grid-column: 2 / 4; 
-        grid-row: 1;
-        align-self: center;         
-    }
+    }    
 
     .nav-center {        
         grid-column: 2 / -1;
@@ -136,3 +124,24 @@
     }
 }
 
+
+// Display logo name only on wider screens
+
+@media screen and (max-width: 1300px) {    
+    .logo-name {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1300px) {    
+    .logo-name {
+        color: $color-dark;
+        font-family: $font-secondary;    
+        font-size: $font-size;      
+        font-weight: $font-weight-bold;
+        line-height: $lineheight-text;    
+        grid-column: 2 / 4; 
+        grid-row: 1;
+        align-self: center;         
+    }
+}
