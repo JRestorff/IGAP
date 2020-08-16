@@ -3,145 +3,142 @@
 // -----------------------------------------------------------------------------
 
 .nav-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    margin-bottom: $spacing-large;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: $spacing-large;
 }
 
 .nav-toggle {
-    font-size: $font-size-x-large;
-    color: $color-dark;
-    background: transparent;
-    border-color: transparent;
-    transition: $transition;
-    cursor: pointer;
+  font-size: $font-size-x-large;
+  color: $color-dark;
+  background: transparent;
+  border-color: transparent;
+  transition: $transition;
+  cursor: pointer;
 
-    :hover {        
-        transform: rotate(90deg);
-    }
+  :hover {
+    transform: rotate(90deg);
   }
+}
 
- .logo {
-      height: 5rem;      
+.logo {
+  height: 5rem;
 }
 
 @media screen and (max-width: $bp-medium) {
-    .logo-desktop {
-        display: none;
-    }
+  .logo-desktop {
+    display: none;
+  }
 }
 
 .links {
-    list-style-type: none;
+  list-style-type: none;
 }
-
 
 .links a {
-    color: $color-dark;
-    font-family: $font-secondary;
-    font-size: $font-size;  
-    line-height: $lineheight-text;
-    letter-spacing: 0.2rem;
-    display: block;
-    padding: 0.5rem 1rem;
-    transition: $transition;
-    text-transform: uppercase; 
+  color: $color-dark;
+  font-family: $font-secondary;
+  font-size: $font-size;
+  line-height: $lineheight-text;
+  letter-spacing: 0.2rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: $transition;
+  text-transform: uppercase;
 
-&:hover {    
+  &:hover {
     color: $color-primary-red;
-    text-decoration: none;    
-    }
+    text-decoration: none;
+  }
 }
 
-  /* BY DEFAULT HIDE LINKS */
+/* BY DEFAULT HIDE LINKS */
 .links {
-    height: 0;
-    overflow: hidden;
-    transition: $transition;
-  }
-  /* TOGGLE CLASS */
-  .show-links {
-    height: auto;
-    margin-bottom: $spacing-medium;
-  }
-
+  height: 0;
+  overflow: hidden;
+  transition: $transition;
+}
+/* TOGGLE CLASS */
+.show-links {
+  height: auto;
+  margin-bottom: $spacing-medium;
+}
 
 @media screen and (min-width: $bp-medium) {
-    header,
-    nav {
-        display: contents;
+  header,
+  nav {
+    display: contents;
+  }
+
+  .logo-desktop {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .nav-center {
+    grid-column: 2 / -1;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-header {
+    padding: 0;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .links {
+    /* IMPORTANT TO ADD */
+    height: auto;
+    display: flex;
+
+    :last-child {
+      padding-right: 0;
     }
 
-    .logo-desktop {
-        grid-column: 1;
-        grid-row: 1;
+    a {
+      padding-right: 2rem;
+      padding-left: 2rem;
     }
 
-    .logo {
-        display: none;
-    }    
-
-    .nav-center {        
-        grid-column: 2 / -1;
-        grid-row: 1;        
-        display: flex;
-        align-items: center;
-        justify-content: space-between;        
+    &:hover {
+      background: transparent;
     }
+  }
 
-    .nav-header {
-        padding: 0;
-    }
-
-    .nav-toggle {
-        display: none;
-    }
-
-    .links {
-        /* IMPORTANT TO ADD */
-        height: auto;
-        display: flex;
-        
-        :last-child {
-            padding-right: 0;
-        }
-
-        a {
-            padding-right: 2rem;
-            padding-left: 2rem;
-        }        
-
-        &:hover {            
-            background: transparent;
-        }
-    }   
-    
-    .line-after-nav {
-        grid-column: 1 / -1;
-        grid-row: 2;
-    }
+  .line-after-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
 }
-
 
 // Display logo name only on wider screens
 
-@media screen and (max-width: 1300px) {    
-    .logo-name {
-        display: none;
-    }
+@media screen and (max-width: 1300px) {
+  .logo-name {
+    display: none;
+  }
 }
 
-@media screen and (min-width: 1300px) {    
-    .logo-name {
-        color: $color-dark;
-        font-family: $font-secondary;    
-        font-size: $font-size;      
-        font-weight: $font-weight-bold;
-        line-height: $lineheight-text;    
-        grid-column: 2 / 4; 
-        grid-row: 1;
-        align-self: center;         
-    }
+@media screen and (min-width: 1300px) {
+  .logo-name {
+    color: $color-dark;
+    font-family: $font-secondary;
+    font-size: $font-size;
+    font-weight: $font-weight-bold;
+    line-height: $lineheight-text;
+    grid-column: 2 / 4;
+    grid-row: 1;
+    align-self: center;
+  }
 }
