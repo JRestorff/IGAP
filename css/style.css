@@ -987,7 +987,7 @@ p:not(h1 + p) + p {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  transition: all .2s;
+  transition: all 0.2s;
   /* width: 18rem; */
   margin: 1.5rem; }
   .filter-btn:hover {
