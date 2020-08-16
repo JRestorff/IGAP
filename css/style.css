@@ -683,8 +683,8 @@ hr {
     .links :last-child {
       padding-right: 0; }
     .links a {
-      padding-right: 2rem;
-      padding-left: 2rem; }
+      padding-right: 3rem;
+      padding-left: 3rem; }
     .links:hover {
       background: transparent; }
   .line-after-nav {
